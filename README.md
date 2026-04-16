@@ -7,3 +7,4 @@ Previously built SalesGet — an AI sales agent that autonomously booked meeting
 Self-taught. Python. Ship it.
 
 [arthurkatcher.com](https://arthurkatcher.com) · [X](https://x.com/arthurkatcher)
+
