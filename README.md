@@ -6,7 +6,7 @@ CTO & Co-Founder @ [Qoris](https://qoris.ai) — the trust layer for enterprise 
 
 - 🔒 **Knox** — governance engine that reviews every agent action before it executes
 - 📦 **Harness** — container orchestration for AI agents. Deploy, isolate, monitor.
-- 🗺️ **[gmaps-mcp](https://github.com/arthurkatcher/google-maps-mcp)** — Google Maps MCP server for Claude
+- 💬 **Chat Widget** — embeddable AI chat with built-in trust guardrails
 
 #### Previously
 
