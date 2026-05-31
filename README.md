@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://github.com/arthurkatcher">
+    <img src="https://readme-typing-svg.demolab.com/?lines=Co-Founder+%26+CTO+%40+Qoris;Senior+Python+%26+AI+Engineer;Building+the+trust+layer+for+enterprise+AI&font=Fira+Code&center=true&width=700&height=45&color=EC6242&size=20&pause=1000&duration=3000" alt="Typing SVG" />
+  </a>
+</p>
+
 ## I build software that keeps AI agents from doing stupid things. 🛡️
 
 CTO & Co-Founder @ [Qoris](https://qoris.ai) — the trust layer for enterprise AI. NVIDIA Inception.
