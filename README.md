@@ -14,6 +14,13 @@ CTO & Co-Founder @ [Qoris](https://qoris.ai) — the trust layer for enterprise 
 
 ⚡ Built **SalesGet** — an AI sales agent that autonomously booked meetings before Calendly shipped the same feature. Acquired 2025. Built Qoris to solve what came next: trust.
 
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/arthurkatcher/arthurkatcher/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/arthurkatcher/arthurkatcher/output/github-snake.svg" />
+  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/arthurkatcher/arthurkatcher/output/github-snake.svg" />
+</picture>
+
 ---
 
 Self-taught. Python. Ship it. 🚀
