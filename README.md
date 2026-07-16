@@ -21,6 +21,4 @@
 
 ---
 
-Self-taught. Python. Ship it. 🚀
-
 [![Website](https://img.shields.io/badge/arthurkatcher.com-000?style=flat-square&logo=safari&logoColor=white)](https://arthurkatcher.com) [![X](https://img.shields.io/badge/@arthurkatcher-000?style=flat-square&logo=x&logoColor=white)](https://x.com/arthurkatcher) [![Qoris](https://img.shields.io/badge/qoris.ai-5A45FF?style=flat-square)](https://qoris.ai)
