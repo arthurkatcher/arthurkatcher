@@ -1,0 +1,17 @@
+<svg width="480" height="180" viewBox="0 0 480 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="xai-voice-agent">
+  <rect x="10" y="10" width="470" height="170" fill="#111111"/>
+  <rect x="2" y="2" width="470" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+  <rect x="28" y="34" width="102" height="17" fill="#FFD500"/><text x="34" y="46" font-size="10" letter-spacing="2" font-weight="700" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace"><tspan fill="#111111">OPEN SOURCE</tspan><tspan fill="#777777">&#160;/ 05</tspan></text>
+  <g transform="translate(34,61) scale(0.8)" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></g>
+  <text x="64" y="78" font-size="17.5" font-weight="800" fill="#111111" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">xai-voice-agent</text>
+  <text x="34" y="106" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">Real-time voice conversations with Grok over the xAI</text>
+  <text x="34" y="127" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">Realtime API: barge-in, VAD, conversation history.</text>
+  <g>
+    <rect x="34" y="138" width="55" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="61.5" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">voice</text>
+  </g>
+  <g>
+    <rect x="99" y="138" width="68" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="133" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">fastapi</text>
+  </g>
+</svg>

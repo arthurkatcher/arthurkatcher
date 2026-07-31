@@ -1,0 +1,17 @@
+<svg width="480" height="180" viewBox="0 0 480 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="gmaps-mcp">
+  <rect x="10" y="10" width="470" height="170" fill="#111111"/>
+  <rect x="2" y="2" width="470" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+  <rect x="28" y="34" width="102" height="17" fill="#FFD500"/><text x="34" y="46" font-size="10" letter-spacing="2" font-weight="700" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace"><tspan fill="#111111">OPEN SOURCE</tspan><tspan fill="#777777">&#160;/ 02</tspan></text>
+  <g transform="translate(34,61) scale(0.8)" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g>
+  <text x="64" y="78" font-size="17.5" font-weight="800" fill="#111111" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">gmaps-mcp</text>
+  <text x="34" y="106" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">Google Maps MCP server: places search, directions,</text>
+  <text x="34" y="127" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">geocoding. Claude Desktop, Cursor, Claude Code.</text>
+  <g>
+    <rect x="34" y="138" width="42" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="55" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">mcp</text>
+  </g>
+  <g>
+    <rect x="86" y="138" width="62" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="117" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">python</text>
+  </g>
+</svg>

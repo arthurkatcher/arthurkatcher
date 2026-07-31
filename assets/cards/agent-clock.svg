@@ -1,0 +1,21 @@
+<svg width="480" height="180" viewBox="0 0 480 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="agent-clock">
+  <rect x="10" y="10" width="470" height="170" fill="#111111"/>
+  <rect x="2" y="2" width="470" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+  <rect x="28" y="34" width="102" height="17" fill="#FFD500"/><text x="34" y="46" font-size="10" letter-spacing="2" font-weight="700" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace"><tspan fill="#111111">OPEN SOURCE</tspan><tspan fill="#777777">&#160;/ 03</tspan></text>
+  <g transform="translate(34,61) scale(0.8)" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></g>
+  <text x="64" y="78" font-size="17.5" font-weight="800" fill="#111111" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">agent-clock</text>
+  <text x="34" y="106" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">Give your coding agent an accurate clock. Injects the</text>
+  <text x="34" y="127" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">real date and time into context on every prompt.</text>
+  <g>
+    <rect x="34" y="138" width="62" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="65" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">plugin</text>
+  </g>
+  <g>
+    <rect x="106" y="138" width="95" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="153.5" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">claude code</text>
+  </g>
+  <g>
+    <rect x="211" y="138" width="55" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="238.5" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">codex</text>
+  </g>
+</svg>

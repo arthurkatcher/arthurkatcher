@@ -1,0 +1,38 @@
+name: refresh-contrib
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate snake (Platane/snk, neo-brutal palette)
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: arthurkatcher
+          outputs: |
+            dist/github-snake.svg?color_snake=#FFFFFF&color_dots=#222222,#4D4200,#807000,#BFA400,#FFD500
+
+      - name: Fetch contribution calendar (footer counter)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api graphql -f query='{ user(login: "arthurkatcher") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount contributionLevel } } } } } }' > data/contrib.json
+
+      - name: Wrap snake in terminal chrome
+        run: node scripts/wrap-snake.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/contrib.json assets/cards/contrib.svg
+          git diff --cached --quiet || (git commit -m "chore: refresh contribution snake" && git push)

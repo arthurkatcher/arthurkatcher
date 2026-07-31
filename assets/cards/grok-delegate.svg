@@ -1,0 +1,21 @@
+<svg width="480" height="180" viewBox="0 0 480 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="grok-delegate">
+  <rect x="10" y="10" width="470" height="170" fill="#111111"/>
+  <rect x="2" y="2" width="470" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+  <rect x="28" y="34" width="78" height="17" fill="#FFD500"/><text x="34" y="46" font-size="10" letter-spacing="2" font-weight="700" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace"><tspan fill="#111111">BUILDING</tspan><tspan fill="#777777">&#160;/ 05</tspan></text>
+  <g transform="translate(34,61) scale(0.8)" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"/><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"/><path d="m18 14 4 4-4 4"/></g>
+  <text x="64" y="78" font-size="17.5" font-weight="800" fill="#111111" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">grok-delegate</text>
+  <text x="34" y="106" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">Grok Build plugin that hands work to local Claude Code or</text>
+  <text x="34" y="127" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">Codex as a background task. Cancel-safe.</text>
+  <g>
+    <rect x="34" y="138" width="48" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="58" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">grok</text>
+  </g>
+  <g>
+    <rect x="92" y="138" width="95" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="139.5" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">claude code</text>
+  </g>
+  <g>
+    <rect x="197" y="138" width="55" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="224.5" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">codex</text>
+  </g>
+</svg>

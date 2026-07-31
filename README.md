@@ -1,24 +1,74 @@
+<div align="center">
+
+<a href="https://github.com/arthurkatcher"><img src="assets/cards/banner.svg" width="96%" alt="co-founder and cto @ qoris · building agents that use computers · python / ts / mcp" /></a>
+
+</div>
+
 # Hey, I'm Arthur 👋
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Co-Founder+%26+CTO+%40+Qoris;Senior+Python+%26+AI+Engineer;Building+the+trust+layer+for+enterprise+AI&font=Fira+Code&center=false&vCenter=true&width=600&height=45&color=EC6242&size=20&pause=1000&duration=3000)](https://github.com/arthurkatcher)
+<div align="center">
+<a href="https://arthurkatcher.com"><img src="assets/cards/hero.svg" width="96%" alt="Co-Founder & CTO · Qoris — founder of an acquired AI startup, now building the infrastructure platform for AI agents" /></a>
+</div>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/arthurkatcher/arthurkatcher/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/arthurkatcher/arthurkatcher/output/github-snake.svg" />
-  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/arthurkatcher/arthurkatcher/output/github-snake.svg" />
-</picture>
+<div align="center">
+<a href="https://github.com/arthurkatcher"><img src="assets/cards/contrib.svg" width="96%" alt="2,905 contributions in the last year" /></a>
+</div>
+
+## Building
+
+<div align="center">
+<a href="https://qoris.ai"><img src="assets/cards/qoris.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/agentparts"><img src="assets/cards/agentparts.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/desktop-use"><img src="assets/cards/desktop-use.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/desktop-sandbox"><img src="assets/cards/desktop-sandbox.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/grok-delegate"><img src="assets/cards/grok-delegate.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/meta-mcp-manager"><img src="assets/cards/meta-mcp.svg" width="47%" /></a>
+</div>
+
+## Stack
+
+<div align="center">
+<img src="assets/cards/stack.svg" width="96%" alt="Tech stack" />
+</div>
+
+## Professional Journey
+
+<div align="center">
+<img src="assets/cards/journey.svg" width="96%" alt="Career trajectory: freelance 2021, AI 2023, SalesGet 2024, acquired and joined Qoris 2025, CTO and Co-Founder 2026" />
+</div>
+
+## Open Source
+
+<div align="center">
+<a href="https://github.com/qoris-ai/knox"><img src="assets/cards/knox.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/google-maps-mcp"><img src="assets/cards/gmaps.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/agent-clock"><img src="assets/cards/agent-clock.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/x-search-via-hermes"><img src="assets/cards/x-search.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/xai-voice-agent"><img src="assets/cards/voice.svg" width="47%" /></a>
+<a href="https://github.com/arthurkatcher/holo-desktop-cli"><img src="assets/cards/holo-cli.svg" width="47%" /></a>
+</div>
 
 ---
 
-## What I'm Up To
+<div align="center">
 
-🔒 **[Qoris](https://qoris.ai)** — Co-Founder & CTO of the trust layer for enterprise AI ([NVIDIA Inception](https://www.nvidia.com/en-us/startups/)). What we ship:
-- **Knox** — a governance engine that reviews every agent action before it executes
-- **Harness** — container orchestration for AI agents. Deploy, isolate, monitor.
-- **Chat Widget** — embeddable AI chat with built-in trust guardrails
+<a href="https://arthurkatcher.com"><img src="assets/cards/link-web.svg" height="17" align="center" /></a> &nbsp;&nbsp; <a href="https://x.com/arthurkatcher"><img src="assets/cards/link-x.svg" height="17" align="center" /></a> &nbsp;&nbsp; <a href="https://qoris.ai"><img src="assets/cards/link-qoris.svg" height="17" align="center" /></a>
 
-⚡ **SalesGet** *(exited 2025)* — an AI sales agent that autonomously booked meetings before Calendly shipped the same feature. Acquired. Built Qoris to solve what came next: trust.
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=arthurkatcher&bg_color=00000000&color=777777&line=FFD500&point=111111&area_color=FFD500&area=true&hide_border=true&custom_title=Contribution%20Activity)](https://github.com/arthurkatcher)
 
----
+</div>
 
-[![Website](https://img.shields.io/badge/arthurkatcher.com-000?style=flat-square&logo=safari&logoColor=white)](https://arthurkatcher.com) [![X](https://img.shields.io/badge/@arthurkatcher-000?style=flat-square&logo=x&logoColor=white)](https://x.com/arthurkatcher) [![Qoris](https://img.shields.io/badge/qoris.ai-5A45FF?style=flat-square)](https://qoris.ai)
+## Try something
+
+<div align="center">
+<a href="https://github.com/qoris-ai/knox"><img src="assets/card-knox.svg" width="46%" alt="knox — claude plugin install knox@qoris" /></a>
+&nbsp;&nbsp;
+<a href="https://github.com/arthurkatcher/google-maps-mcp"><img src="assets/card-gmaps.svg" width="46%" alt="gmaps-mcp — uvx gmaps-mcp" /></a>
+<br/>
+<sub>Copy a command. Knox guards every agent session; gmaps-mcp runs anywhere MCP does.</sub>
+</div>
+
+```bash
+claude plugin marketplace add qoris-ai/qoris-marketplace && claude plugin install knox@qoris
+uvx gmaps-mcp
+```

@@ -1,0 +1,21 @@
+<svg width="480" height="180" viewBox="0 0 480 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="agentparts">
+  <rect x="10" y="10" width="470" height="170" fill="#111111"/>
+  <rect x="2" y="2" width="470" height="170" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+  <rect x="28" y="34" width="78" height="17" fill="#FFD500"/><text x="34" y="46" font-size="10" letter-spacing="2" font-weight="700" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace"><tspan fill="#111111">BUILDING</tspan><tspan fill="#777777">&#160;/ 02</tspan></text>
+  <g transform="translate(34,61) scale(0.8)" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></g>
+  <text x="64" y="78" font-size="17.5" font-weight="800" fill="#111111" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">agentparts</text>
+  <text x="34" y="106" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">Terminal UI components for agent harnesses: status rows,</text>
+  <text x="34" y="127" font-size="13.5" fill="#333333" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif">approval prompts, harness chrome. 213 tests.</text>
+  <g>
+    <rect x="34" y="138" width="68" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="68" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">opentui</text>
+  </g>
+  <g>
+    <rect x="112" y="138" width="55" height="24" fill="#FFD500" stroke="#111111" stroke-width="2"/>
+    <text x="139.5" y="154" font-size="10.5" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">react</text>
+  </g>
+  <g>
+    <rect x="177" y="138" width="95" height="24" fill="#111111" stroke="#111111" stroke-width="2"/>
+    <text x="224.5" y="154" font-size="10.5" font-weight="700" fill="#FFD500" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">public soon</text>
+  </g>
+</svg>

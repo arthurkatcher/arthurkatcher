@@ -1,0 +1,28 @@
+<svg width="480" height="192" viewBox="0 0 480 192" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="gmaps-mcp">
+  <defs>
+    <clipPath id="wipe-gmaps">
+      <rect x="20" y="66" width="0" height="84">
+        <animate attributeName="width" values="0;440" dur="2.2s" begin="0.4s" fill="freeze" calcMode="linear"/>
+      </rect>
+    </clipPath>
+    <style>
+      .mono { font-family: "SF Mono","Fira Code",ui-monospace,"DejaVu Sans Mono",monospace; }
+    </style>
+  </defs>
+  <rect x="10" y="10" width="470" height="182" fill="#FFD500"/>
+  <rect x="2" y="2" width="470" height="182" fill="#111111" stroke="#111111" stroke-width="2"/>
+  <rect x="24" y="28" width="10" height="10" fill="none" stroke="#999999" stroke-width="2"/>
+  <rect x="44" y="28" width="10" height="10" fill="none" stroke="#999999" stroke-width="2"/>
+  <rect x="64" y="28" width="10" height="10" fill="#FFD500"/>
+  <text class="mono" x="92" y="37" font-size="13" fill="#999999">gmaps-mcp</text>
+  <line x1="20" y1="54" x2="454" y2="54" stroke="#333333" stroke-width="2"/>
+  <g clip-path="url(#wipe-gmaps)">
+    <text class="mono" x="26" y="92" font-size="14"><tspan fill="#FFD500">$</tspan><tspan fill="#FFFFFF"> uvx </tspan><tspan fill="#FFD500">gmaps-mcp</tspan></text>
+    <text class="mono" x="26" y="116" font-size="14"><tspan fill="#999999"># Google Maps for your agent:</tspan></text>
+    <text class="mono" x="26" y="140" font-size="14"><tspan fill="#999999"># places, directions, geocoding</tspan></text>
+  </g>
+  <text class="mono" x="26" y="164" font-size="14" fill="#FFD500">$</text>
+  <rect x="44" y="152" width="8" height="15" fill="#FFD500">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" begin="2.6s" repeatCount="indefinite"/>
+  </rect>
+</svg>
