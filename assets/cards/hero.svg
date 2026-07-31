@@ -1,9 +1,9 @@
 <svg width="860" height="258" viewBox="0 0 860 258" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect x="10" y="10" width="850" height="248" fill="#FFD500"/>
-  <rect x="2" y="2" width="850" height="248" fill="#111111" stroke="#111111" stroke-width="2"/>
-  <rect x="32" y="40" width="69" height="17" fill="#FFD500"/><text x="38" y="52" font-size="10" letter-spacing="2" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace">PROFILE</text>
+  <rect x="2" y="2" width="850" height="248" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <rect x="32" y="40" width="69" height="17" fill="#FFD500"/><text x="38" y="52" font-size="10" letter-spacing="2" font-weight="700" fill="#0d1117" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace">PROFILE</text>
   <rect x="683" y="36" width="135" height="24" fill="#FFD500"/>
-  <text x="750.5" y="52" font-size="10" letter-spacing="2" font-weight="700" fill="#111111" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">SHIPPING DAILY</text>
+  <text x="750.5" y="52" font-size="10" letter-spacing="2" font-weight="700" fill="#0d1117" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" text-anchor="middle">SHIPPING DAILY</text>
   <text x="38" y="92" font-size="21" font-weight="800" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif"><tspan fill="#FFFFFF">Co-Founder &amp; CTO</tspan><tspan fill="#888888">&#160;&#160;·&#160;&#160;</tspan><tspan fill="#FFFFFF">Qoris</tspan></text>
   <text x="38" y="120" font-size="15" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif"><tspan fill="#BBBBBB">Agent infrastructure, in the open</tspan><tspan fill="#888888">&#160;&#160;·&#160;&#160;</tspan><tspan fill="#FFFFFF" font-weight="700">arthurkatcher.com</tspan></text>
   <line x1="38" y1="144" x2="816" y2="144" stroke="#FFFFFF" stroke-width="2"/>

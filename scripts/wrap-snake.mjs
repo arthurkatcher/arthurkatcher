@@ -10,7 +10,7 @@ const cal = JSON.parse(readFileSync(new URL("../data/contrib.json", import.meta.
   .data.user.contributionsCollection.contributionCalendar;
 
 const mono = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace";
-const INK = "#111111", YELLOW = "#FFD500", DIM = "#999999";
+const INK = "#0d1117", BORDER = "#30363d", YELLOW = "#FFD500", DIM = "#999999";
 
 // Pull the snk root tag's dimensions, keep everything inside it verbatim
 // (its <style> holds the whole animation).
@@ -40,13 +40,13 @@ const total = cal.totalContributions.toLocaleString("en-US");
 
 const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${total} contributions in the last year">
   <rect x="${4 + OFF}" y="${4 + OFF}" width="${cw}" height="${ch}" fill="${YELLOW}"/>
-  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${INK}" stroke="${INK}" stroke-width="2"/>
+  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${INK}" stroke="${BORDER}" stroke-width="2"/>
   <rect x="24" y="24" width="10" height="10" fill="none" stroke="${DIM}" stroke-width="2"/>
   <rect x="44" y="24" width="10" height="10" fill="none" stroke="${DIM}" stroke-width="2"/>
   <rect x="64" y="24" width="10" height="10" fill="${YELLOW}"/>
   <text x="92" y="33" font-size="13" fill="${DIM}" font-family="${mono}">contributions.log</text>
   <text x="${cw - 16}" y="33" font-size="11" fill="${DIM}" font-family="${mono}" text-anchor="end">last 365 days</text>
-  <line x1="20" y1="46" x2="${cw - 16}" y2="46" stroke="#333333" stroke-width="2"/>
+  <line x1="20" y1="46" x2="${cw - 16}" y2="46" stroke="#21262d" stroke-width="2"/>
   <svg x="${gx}" y="${gy}" width="${targetW}" height="${scaledH}" viewBox="${vbX} ${vbY} ${vbW} ${vbH}">${inner}</svg>
   <text x="${gx + 4}" y="${footerY}" font-size="13" font-family="${mono}"><tspan fill="${YELLOW}">$</tspan><tspan fill="#FFFFFF"> ${total} contributions in the last year</tspan></text>
   <rect x="${gx + 4 + (total.length + 34) * 7.9}" y="${footerY - 11}" width="7" height="14" fill="${YELLOW}">
