@@ -40,7 +40,7 @@ const total = cal.totalContributions.toLocaleString("en-US");
 
 const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${total} contributions in the last year">
   <rect x="${4 + OFF}" y="${4 + OFF}" width="${cw}" height="${ch}" fill="${YELLOW}"/>
-  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${INK}" stroke="${BORDER}" stroke-width="2"/>
+  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${INK}" stroke="${BORDER}" stroke-width="1"/>
   <rect x="24" y="24" width="10" height="10" fill="none" stroke="${DIM}" stroke-width="2"/>
   <rect x="44" y="24" width="10" height="10" fill="none" stroke="${DIM}" stroke-width="2"/>
   <rect x="64" y="24" width="10" height="10" fill="${YELLOW}"/>

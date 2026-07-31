@@ -10,7 +10,7 @@
     </style>
   </defs>
   <rect x="10" y="10" width="470" height="182" fill="#FFD500"/>
-  <rect x="2" y="2" width="470" height="182" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <rect x="2" y="2" width="470" height="182" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
   <rect x="24" y="28" width="10" height="10" fill="none" stroke="#999999" stroke-width="2"/>
   <rect x="44" y="28" width="10" height="10" fill="none" stroke="#999999" stroke-width="2"/>
   <rect x="64" y="28" width="10" height="10" fill="#FFD500"/>
