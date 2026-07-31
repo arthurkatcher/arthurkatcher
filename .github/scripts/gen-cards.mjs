@@ -4,8 +4,8 @@
 // Run: node scripts/gen-cards.mjs
 import { writeFileSync, mkdirSync } from "fs";
 
-const OUT = new URL("../assets/cards/", import.meta.url);
-const ASSETS = new URL("../assets/", import.meta.url);
+const OUT = new URL("../../assets/", import.meta.url);
+const ASSETS = new URL("../../assets/", import.meta.url);
 mkdirSync(OUT, { recursive: true });
 
 const C = {

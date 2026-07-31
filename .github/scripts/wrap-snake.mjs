@@ -1,11 +1,11 @@
 // Wraps the Platane/snk-generated snake SVG in the neo-brutal terminal window.
 // Input:  dist/github-snake.svg  (from the snk svg-only action, custom palette)
 //         data/contrib.json      (for the footer counter)
-// Output: assets/cards/contrib.svg
+// Output: assets/contrib.svg
 // Run: node scripts/wrap-snake.mjs
 import { writeFileSync, readFileSync } from "fs";
 
-const snakeRaw = readFileSync(new URL("../dist/github-snake.svg", import.meta.url), "utf8");
+const snakeRaw = readFileSync(new URL("../../dist/github-snake.svg", import.meta.url), "utf8");
 const cal = JSON.parse(readFileSync(new URL("../data/contrib.json", import.meta.url), "utf8"))
   .data.user.contributionsCollection.contributionCalendar;
 
@@ -54,5 +54,5 @@ const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none"
   </rect>
 </svg>\n`;
 
-writeFileSync(new URL("../assets/cards/contrib.svg", import.meta.url), svg);
+writeFileSync(new URL("../../assets/contrib.svg", import.meta.url), svg);
 console.log(`wrapped snk snake ${vbW}x${vbH} → contrib.svg ${W}x${H}, ${total} contributions`);
