@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://github.com/arthurkatcher"><img src="assets/banner.svg?v=2" width="96%" alt="co-founder and cto @ qoris · building agents that use computers · python / ts / mcp" /></a>
+<a href="https://github.com/arthurkatcher"><img src="assets/banner.svg?v=3" width="96%" alt="co-founder and cto @ qoris · harnesses and runtimes for ai agents · python / ts / mcp" /></a>
 
 </div>
 

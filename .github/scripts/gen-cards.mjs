@@ -329,11 +329,11 @@ function bannerGraphic() {
     ["$ ", C.yellow],
     ["co-founder & cto @ qoris", "#FFFFFF"],
     ["  ·  ", "#777777"],
-    ["building agents that use computers", "#FFFFFF"],
+    ["harnesses and runtimes for ai agents", "#FFFFFF"],
     ["  ·  ", "#777777"],
     ["python / ts / mcp", C.yellow]
   ].map(([t, c]) => `<tspan fill="${c}">${esc(t)}</tspan>`).join("");
-  return `<svg width="${BW}" height="${BH}" viewBox="0 0 ${BW} ${BH}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="co-founder and cto at qoris, building agents that use computers">
+  return `<svg width="${BW}" height="${BH}" viewBox="0 0 ${BW} ${BH}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="co-founder and cto at qoris, harnesses and runtimes for ai agents">
   <rect x="${4 + OFF}" y="${4 + OFF}" width="${cw}" height="${ch}" fill="${C.yellow}"/>
   <rect x="2" y="2" width="${cw}" height="${ch}" fill="${C.ink}"/>
   <text x="26" y="36" font-size="14.5" font-weight="700" font-family="${mono}">${line}</text>
