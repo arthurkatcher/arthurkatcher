@@ -1,6 +1,9 @@
 // Generates bespoke SVG cards for the profile README.
-// Theme: NEO-BRUTAL — white cards, 2px ink borders, offset slab shadows,
-// one loud yellow (#FFD500), square corners, marker highlights.
+// Theme: DARK GITHUB — #0d1117 surfaces with 1px #30363d hairline borders,
+// offset yellow slab shadows, one loud yellow (#FFD500), square corners,
+// marker highlights. The small project cards keep the original light
+// (white card / 2px ink border) treatment; the wide blocks (banner, hero,
+// journey, stack) and the terminal install cards are dark.
 // Run: node scripts/gen-cards.mjs
 import { writeFileSync, mkdirSync } from "fs";
 
@@ -20,6 +23,19 @@ const C = {
   sans: "-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif"
 };
 const mono = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace";
+
+// Dark GitHub-toned palette for the wide blocks and the terminal cards.
+// C.ink splits by role here: text becomes D.text, surfaces become D.card and
+// borders become the D.border hairline.
+const D = {
+  card: "#0d1117",    // dark surface; also the ink colour used ON yellow
+  border: "#30363d",  // 1px hairline card border
+  text: "#FFFFFF",    // primary text / strokes
+  desc: "#BBBBBB",    // body copy
+  faint: "#888888",   // secondary text
+  rule: "#21262d",    // grid lines and the terminal window divider
+  onYellow: "#6b6000" // dimmed separators sitting on the yellow banner
+};
 
 // Monochrome line icons (Lucide, MIT).
 const ICON = {
@@ -52,14 +68,23 @@ function frame(w, h, slab = C.ink) {
   <rect x="2" y="2" width="${cw}" height="${ch}" fill="${C.card}" stroke="${C.ink}" stroke-width="2"/>`;
 }
 
+// Dark counterpart: #0d1117 card, 1px #30363d hairline, yellow slab shadow.
+function darkFrame(w, h, slab = C.yellow) {
+  const cw = w - OFF - 4, ch = h - OFF - 4;
+  return `<rect x="${4 + OFF}" y="${4 + OFF}" width="${cw}" height="${ch}" fill="${slab}"/>
+  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${D.card}" stroke="${D.border}" stroke-width="1"/>`;
+}
+
 // Marker highlight behind mono uppercase text.
 function marker(x, y, chars) {
   const w = Math.round(chars * 8.2 + 12);
   return `<rect x="${x - 6}" y="${y - 12}" width="${w}" height="17" fill="${C.yellow}"/>`;
 }
 
-function eyebrow(x, y, hot, rest) {
-  return `${marker(x, y, hot.length)}<text x="${x}" y="${y}" font-size="10" letter-spacing="2" font-weight="700" font-family="${mono}"><tspan fill="${C.ink}">${esc(hot)}</tspan><tspan fill="${C.faint}">&#160;${esc(rest)}</tspan></text>`;
+// hotFill sits on the yellow marker, restFill on the card behind it, so both
+// are caller-supplied: light cards pass ink/faint, dark blocks pass D tones.
+function eyebrow(x, y, hot, rest, hotFill = C.ink, restFill = C.faint) {
+  return `${marker(x, y, hot.length)}<text x="${x}" y="${y}" font-size="10" letter-spacing="2" font-weight="700" font-family="${mono}"><tspan fill="${hotFill}">${esc(hot)}</tspan><tspan fill="${restFill}">&#160;${esc(rest)}</tspan></text>`;
 }
 
 // Project cards --------------------------------------------------------------
@@ -184,12 +209,12 @@ function termCard({ file, name, lines }) {
     </style>
   </defs>
   <rect x="${4 + OFF}" y="${4 + OFF}" width="${cw}" height="${ch}" fill="${C.yellow}"/>
-  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${C.termBg}" stroke="${C.ink}" stroke-width="2"/>
+  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${D.card}" stroke="${D.border}" stroke-width="1"/>
   <rect x="24" y="28" width="10" height="10" fill="none" stroke="${C.termDim}" stroke-width="2"/>
   <rect x="44" y="28" width="10" height="10" fill="none" stroke="${C.termDim}" stroke-width="2"/>
   <rect x="64" y="28" width="10" height="10" fill="${C.yellow}"/>
   <text class="mono" x="92" y="37" font-size="13" fill="${C.termDim}">${esc(name)}</text>
-  <line x1="20" y1="54" x2="${cw - 16}" y2="54" stroke="#333333" stroke-width="2"/>
+  <line x1="20" y1="54" x2="${cw - 16}" y2="54" stroke="${D.rule}" stroke-width="2"/>
   <g clip-path="url(#${wipeId})">
     ${lineSvg}
   </g>
@@ -250,7 +275,7 @@ function journeyGraphic() {
   const area = `M${co[0].x.toFixed(1)},${chartBot} ` + co.map((c) => `L${c.x.toFixed(1)},${c.y.toFixed(1)}`).join(" ") + ` L${co[n - 1].x.toFixed(1)},${chartBot} Z`;
 
   const grid = [0.25, 0.5, 0.75]
-    .map((f) => { const gy = chartBot - (chartBot - chartTop) * f; return `<line x1="${padL - 10}" y1="${gy.toFixed(1)}" x2="${TW - padR + 10}" y2="${gy.toFixed(1)}" stroke="#E5E1D8" stroke-width="2" stroke-dasharray="2 8"/>`; })
+    .map((f) => { const gy = chartBot - (chartBot - chartTop) * f; return `<line x1="${padL - 10}" y1="${gy.toFixed(1)}" x2="${TW - padR + 10}" y2="${gy.toFixed(1)}" stroke="${D.rule}" stroke-width="2" stroke-dasharray="2 8"/>`; })
     .join("\n  ");
 
   const marks = co
@@ -258,11 +283,11 @@ function journeyGraphic() {
       const last = i === n - 1;
       const ly = c.y - 44;
       const s = last ? 14 : 10;
-      const iconSvg = `\n  <g transform="translate(${(c.x - 9).toFixed(1)},${(ly - 9).toFixed(1)}) scale(0.75)" fill="none" stroke="${C.ink}" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">${c.ic}</g>`;
+      const iconSvg = `<g transform="translate(${(c.x - 9).toFixed(1)},${(ly - 9).toFixed(1)}) scale(0.75)" fill="none" stroke="${D.text}" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">${c.ic}</g>`;
       return `${iconSvg}
-  <rect x="${(c.x - s / 2).toFixed(1)}" y="${(c.y - s / 2).toFixed(1)}" width="${s}" height="${s}" fill="${last ? C.yellow : C.card}" stroke="${C.ink}" stroke-width="2"/>
-  <text x="${c.x.toFixed(1)}" y="${(c.y - 20).toFixed(1)}" font-size="12.5" font-weight="800" fill="${C.ink}" font-family="${C.sans}" text-anchor="middle">${esc(c.org)}</text>
-  <text x="${c.x.toFixed(1)}" y="${chartBot + 24}" font-size="11" font-weight="700" fill="${C.faint}" font-family="${mono}" text-anchor="middle">${esc(c.yr)}</text>`;
+  <rect x="${(c.x - s / 2).toFixed(1)}" y="${(c.y - s / 2).toFixed(1)}" width="${s}" height="${s}" fill="${last ? C.yellow : D.card}" stroke="${C.yellow}" stroke-width="2"/>
+  <text x="${c.x.toFixed(1)}" y="${(c.y - 20).toFixed(1)}" font-size="12.5" font-weight="800" fill="${D.text}" font-family="${C.sans}" text-anchor="middle">${esc(c.org)}</text>
+  <text x="${c.x.toFixed(1)}" y="${chartBot + 24}" font-size="11" font-weight="700" fill="${D.faint}" font-family="${mono}" text-anchor="middle">${esc(c.yr)}</text>`;
     })
     .join("");
 
@@ -273,21 +298,21 @@ function journeyGraphic() {
     .map((e, i) => {
       const ly = legendTop + i * rowH;
       return `
-  <rect x="${padL}" y="${ly - 10}" width="8" height="8" fill="${C.yellow}" stroke="${C.ink}" stroke-width="1.5"/>
-  <text x="${padL + 20}" y="${ly}" font-size="12.5" font-family="${C.sans}"><tspan font-weight="800" fill="${C.ink}">${esc(e.org)}</tspan><tspan fill="${C.desc}">&#160;&#160;·&#160;&#160;${esc(e.role)}</tspan></text>
-  <text x="${TW - padR}" y="${ly}" font-size="11" fill="${C.faint}" font-family="${mono}" text-anchor="end">${esc(e.yr)}</text>`;
+  <rect x="${padL}" y="${ly - 10}" width="8" height="8" fill="${C.yellow}" stroke="${D.text}" stroke-width="1.5"/>
+  <text x="${padL + 20}" y="${ly}" font-size="12.5" font-family="${C.sans}"><tspan font-weight="800" fill="${D.text}">${esc(e.org)}</tspan><tspan fill="${D.desc}">&#160;&#160;·&#160;&#160;${esc(e.role)}</tspan></text>
+  <text x="${TW - padR}" y="${ly}" font-size="11" fill="${D.faint}" font-family="${mono}" text-anchor="end">${esc(e.yr)}</text>`;
     })
     .join("");
   const H = legendTop + (LEGEND.length - 1) * rowH + 32;
 
-  return `<svg width="${TW}" height="${H}" viewBox="0 0 ${TW} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Career trajectory: up and to the right">
-  ${frame(TW, H)}
-  ${eyebrow(padL, 54, "TRAJECTORY", "/ 2021 → NOW")}
+  return `<svg width="${TW}" height="${H}" viewBox="0 0 ${TW} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  ${darkFrame(TW, H)}
+  ${eyebrow(padL, 54, "TRAJECTORY", "/ 2021 → NOW", D.card, D.faint)}
   ${grid}
-  <line x1="${padL - 10}" y1="${chartBot}" x2="${TW - padR + 10}" y2="${chartBot}" stroke="${C.ink}" stroke-width="2"/>
+  <line x1="${padL - 10}" y1="${chartBot}" x2="${TW - padR + 10}" y2="${chartBot}" stroke="${D.text}" stroke-width="2"/>
   <path d="${area}" fill="${C.yellow}" fill-opacity="0.14"/>
-  <path d="${line}" fill="none" stroke="${C.ink}" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter"/>${marks}
-  <line x1="${padL}" y1="${dividerY}" x2="${TW - padR - OFF}" y2="${dividerY}" stroke="${C.ink}" stroke-width="2"/>${legend}
+  <path d="${line}" fill="none" stroke="${C.yellow}" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter"/>${marks}
+  <line x1="${padL}" y1="${dividerY}" x2="${TW - padR - OFF}" y2="${dividerY}" stroke="${D.text}" stroke-width="2"/>${legend}
 </svg>\n`;
 }
 writeFileSync(new URL("journey.svg", OUT), journeyGraphic());
@@ -301,43 +326,44 @@ function heroGraphic() {
   const summary = "Founder of an acquired AI startup with 5 years of engineering experience, now the technical co-founder who builds the infrastructure platform for AI agents and ships them into customer environments.";
   const sumLines = wrap(summary, 100);
   const sumSvg = sumLines
-    .map((l, i) => `<text x="${x0}" y="${sumTop + i * sumLineH}" font-size="14" fill="${C.desc}" font-family="${C.sans}">${esc(l)}</text>`)
+    .map((l, i) => `<text x="${x0}" y="${sumTop + i * sumLineH}" font-size="14" fill="${D.desc}" font-family="${C.sans}">${esc(l)}</text>`)
     .join("\n  ");
   const H = sumTop + (sumLines.length - 1) * sumLineH + 40;
 
   const tag = "SHIPPING DAILY";
   const tagW = Math.round(tag.length * 8.2 + 20);
-  return `<svg width="${HW}" height="${H}" viewBox="0 0 ${HW} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Co-Founder &amp; CTO at Qoris. ${esc(summary)}">
-  ${frame(HW, H)}
-  ${marker(x0, eyebrowY, "PROFILE".length)}<text x="${x0}" y="${eyebrowY}" font-size="10" letter-spacing="2" font-weight="700" fill="${C.ink}" font-family="${mono}">PROFILE</text>
-  <rect x="${HW - 42 - tagW}" y="${eyebrowY - 16}" width="${tagW}" height="24" fill="${C.ink}"/>
-  <text x="${HW - 42 - tagW / 2}" y="${eyebrowY}" font-size="10" letter-spacing="2" font-weight="700" fill="${C.yellow}" font-family="${mono}" text-anchor="middle">${tag}</text>
-  <text x="${x0}" y="${roleY}" font-size="21" font-weight="800" font-family="${C.sans}"><tspan fill="${C.ink}">Co-Founder &amp; CTO</tspan><tspan fill="${C.faint}">&#160;&#160;·&#160;&#160;</tspan><tspan fill="${C.ink}">Qoris</tspan></text>
-  <text x="${x0}" y="${subY}" font-size="15" font-family="${C.sans}"><tspan fill="${C.desc}">Agent infrastructure, in the open</tspan><tspan fill="${C.faint}">&#160;&#160;·&#160;&#160;</tspan><tspan fill="${C.ink}" font-weight="700">arthurkatcher.com</tspan></text>
-  <line x1="${x0}" y1="${dividerY}" x2="${HW - x0 - OFF}" y2="${dividerY}" stroke="${C.ink}" stroke-width="2"/>
+  return `<svg width="${HW}" height="${H}" viewBox="0 0 ${HW} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  ${darkFrame(HW, H)}
+  ${marker(x0, eyebrowY, "PROFILE".length)}<text x="${x0}" y="${eyebrowY}" font-size="10" letter-spacing="2" font-weight="700" fill="${D.card}" font-family="${mono}">PROFILE</text>
+  <rect x="${HW - 42 - tagW}" y="${eyebrowY - 16}" width="${tagW}" height="24" fill="${C.yellow}"/>
+  <text x="${HW - 42 - tagW / 2}" y="${eyebrowY}" font-size="10" letter-spacing="2" font-weight="700" fill="${D.card}" font-family="${mono}" text-anchor="middle">${tag}</text>
+  <text x="${x0}" y="${roleY}" font-size="21" font-weight="800" font-family="${C.sans}"><tspan fill="${D.text}">Co-Founder &amp; CTO</tspan><tspan fill="${D.faint}">&#160;&#160;·&#160;&#160;</tspan><tspan fill="${D.text}">Qoris</tspan></text>
+  <text x="${x0}" y="${subY}" font-size="15" font-family="${C.sans}"><tspan fill="${D.desc}">Agent infrastructure, in the open</tspan><tspan fill="${D.faint}">&#160;&#160;·&#160;&#160;</tspan><tspan fill="${D.text}" font-weight="700">arthurkatcher.com</tspan></text>
+  <line x1="${x0}" y1="${dividerY}" x2="${HW - x0 - OFF}" y2="${dividerY}" stroke="${D.text}" stroke-width="2"/>
   ${sumSvg}
 </svg>\n`;
 }
 writeFileSync(new URL("hero.svg", OUT), heroGraphic());
 
-// Banner: replaces the third-party typing SVG. Black slab, blinking cursor. --
+// Banner: replaces the third-party typing SVG. Inverted against the rest of
+// the dark set — a YELLOW card on a #0d1117 slab, with dark ink text. ------
 
 function bannerGraphic() {
   const BW = 860, BH = 64;
   const cw = BW - OFF - 4, ch = BH - OFF - 4;
   const line = [
-    ["$ ", C.yellow],
-    ["co-founder & cto @ qoris", "#FFFFFF"],
-    ["  ·  ", "#777777"],
-    ["harnesses and runtimes for ai agents", "#FFFFFF"],
-    ["  ·  ", "#777777"],
-    ["python / ts / mcp", C.yellow]
+    ["$ ", D.card],
+    ["co-founder & cto @ qoris", D.card],
+    ["  ·  ", D.onYellow],
+    ["harnesses and runtimes for ai agents", D.card],
+    ["  ·  ", D.onYellow],
+    ["python / ts / mcp", D.card]
   ].map(([t, c]) => `<tspan fill="${c}">${esc(t)}</tspan>`).join("");
-  return `<svg width="${BW}" height="${BH}" viewBox="0 0 ${BW} ${BH}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="co-founder and cto at qoris, harnesses and runtimes for ai agents">
-  <rect x="${4 + OFF}" y="${4 + OFF}" width="${cw}" height="${ch}" fill="${C.yellow}"/>
-  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${C.ink}"/>
+  return `<svg width="${BW}" height="${BH}" viewBox="0 0 ${BW} ${BH}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="${4 + OFF}" y="${4 + OFF}" width="${cw}" height="${ch}" fill="${D.card}"/>
+  <rect x="2" y="2" width="${cw}" height="${ch}" fill="${C.yellow}" stroke="${D.border}" stroke-width="1"/>
   <text x="26" y="36" font-size="14.5" font-weight="700" font-family="${mono}">${line}</text>
-  <rect x="${cw - 34}" y="21" width="9" height="17" fill="${C.yellow}">
+  <rect x="${cw - 34}" y="21" width="9" height="17" fill="${D.card}">
     <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/>
   </rect>
 </svg>\n`;
@@ -392,7 +418,7 @@ function stackGraphic() {
   const SW = 860, fs = 12.5, pillH = 28, gap = 10, lineGap = 12, groupGap = 30, labelGap = 30, startX = 38, maxX = SW - 38 - OFF;
   let y = 56, body = "";
   for (const g of STACK) {
-    body += `\n  ${marker(startX, y, 2)}<text x="${startX}" y="${y}" font-size="10" letter-spacing="2" font-weight="700" font-family="${mono}"><tspan fill="${C.ink}">//</tspan><tspan fill="${C.faint}">&#160;${esc(g.label)}</tspan></text>`;
+    body += `\n  ${marker(startX, y, 2)}<text x="${startX}" y="${y}" font-size="10" letter-spacing="2" font-weight="700" font-family="${mono}"><tspan fill="${D.card}">//</tspan><tspan fill="${D.faint}">&#160;${esc(g.label)}</tspan></text>`;
     y += labelGap;
     let x = startX;
     for (const [label, slug] of g.items) {
@@ -400,15 +426,15 @@ function stackGraphic() {
       const logoW = hasLogo ? 15 : 0, innerGap = hasLogo ? 6 : 0;
       const pw = Math.round(12 + logoW + innerGap + label.length * 7 + 12);
       if (x + pw > maxX) { x = startX; y += pillH + lineGap; }
-      const logoSvg = hasLogo ? `<g transform="translate(${x + 12},${y + 6.5}) scale(0.625)" fill="${C.ink}"><path d="${stackPaths[slug]}"/></g>` : "";
-      body += `\n  <rect x="${x}" y="${y}" width="${pw}" height="${pillH}" fill="${C.card}" stroke="${C.ink}" stroke-width="2"/>${logoSvg}<text x="${x + 12 + logoW + innerGap}" y="${y + 18.5}" font-size="${fs}" font-weight="600" fill="${C.ink}" font-family="${C.sans}">${esc(label)}</text>`;
+      const logoSvg = hasLogo ? `<g transform="translate(${x + 12},${y + 6.5}) scale(0.625)" fill="${D.text}"><path d="${stackPaths[slug]}"/></g>` : "";
+      body += `\n  <rect x="${x}" y="${y}" width="${pw}" height="${pillH}" fill="${D.card}" stroke="${D.text}" stroke-width="2"/>${logoSvg}<text x="${x + 12 + logoW + innerGap}" y="${y + 18.5}" font-size="${fs}" font-weight="600" fill="${D.text}" font-family="${C.sans}">${esc(label)}</text>`;
       x += pw + gap;
     }
     y += pillH + groupGap;
   }
   const H = y - groupGap + 30;
-  return `<svg width="${SW}" height="${H}" viewBox="0 0 ${SW} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tech stack">
-  ${frame(SW, H)}${body}
+  return `<svg width="${SW}" height="${H}" viewBox="0 0 ${SW} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  ${darkFrame(SW, H)}${body}
 </svg>\n`;
 }
 writeFileSync(new URL("stack.svg", OUT), stackGraphic());
