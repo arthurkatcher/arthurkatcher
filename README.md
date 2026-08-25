@@ -51,7 +51,7 @@
 ## Activity Graph
 
 <div align="center">
-<a href="https://github.com/arthurkatcher"><img src="assets/activity.svg?v=5" width="96%" alt="Contribution activity, last 31 days" /></a>
+<a href="https://github.com/arthurkatcher"><img src="assets/activity.svg?v=6" width="96%" alt="Contribution activity, last 31 days" /></a>
 </div>
 
 ## Try something
