@@ -36,7 +36,7 @@ function chart(P, {bars=false, barStyle="solid", label="ACTIVITY", sub="/ LAST 3
   }
   const H=bot+(P.card?48:40)+OFF;
   const frame=P.card?`<rect x="${4+OFF}" y="${4+OFF}" width="${W-OFF-4}" height="${H-OFF-4}" fill="${P.slab}"/><rect x="2" y="2" width="${W-OFF-4}" height="${H-OFF-4}" fill="${P.card}" stroke="${P.stroke}" stroke-width="2"/>`:"";
-  const eyebrow=`<rect x="${padL}" y="46" width="8" height="8" fill="${YEL}" stroke="${P.rule}" stroke-width="1.5"/><text x="${padL+20}" y="54" font-size="10" letter-spacing="2" font-weight="700" font-family="${mono}"><tspan fill="${P.line}">//</tspan><tspan fill="${P.faint}">&#160;${label} ${sub}</tspan></text><text x="${W-padR-OFF}" y="54" font-size="11" font-weight="700" fill="${P.ink}" font-family="${mono}" text-anchor="end">${total} total · max ${max}/day</text>`;
+  const eyebrow=`<rect x="${padL}" y="46" width="8" height="8" fill="${YEL}" stroke="${P.rule}" stroke-width="1.5"/><text x="${padL+20}" y="54" font-size="10" letter-spacing="2" font-weight="700" font-family="${mono}"><tspan fill="${P.line}">//</tspan><tspan fill="${P.faint}">&#160;${label} ${sub}</tspan></text><text x="${W-padR-OFF}" y="54" font-size="11" font-weight="700" fill="${P.ink}" font-family="${mono}" text-anchor="end">${total} contributions · max ${max}/day</text>`;
   return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${total} contributions in the last 31 days">
   ${frame}${eyebrow}
   ${grid}
