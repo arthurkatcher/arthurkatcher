@@ -33,9 +33,14 @@ jobs:
       - name: Render activity line chart (self-hosted)
         run: node .github/scripts/activity-graph.mjs
 
+      - name: Sync README contribution count
+        run: |
+          T=$(node -e 'const c=require("./.github/data/contrib.json").data.user.contributionsCollection.contributionCalendar.totalContributions;console.log(c.toLocaleString("en-US"))')
+          sed -i -E "s/alt=\"[0-9,]+ contributions in the last year\"/alt=\"$T contributions in the last year\"/" README.md
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/data/contrib.json assets/contrib.svg assets/activity.svg
+          git add .github/data/contrib.json assets/contrib.svg assets/activity.svg README.md
           git diff --cached --quiet || (git commit -m "chore: refresh contribution graphs" && git push)
