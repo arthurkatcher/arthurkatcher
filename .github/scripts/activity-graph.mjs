@@ -1,6 +1,6 @@
-// Self-hosted activity chart (replaces github-readme-activity-graph, upstream 402).
-// Neo-brutal GH-dark card, straight segments, square markers. Style source: profile-v2 variants.mjs.
-// Input: .github/data/contrib.json  Output: assets/activity.svg
+// Self-hosted activity chart (replaces github-readme-activity-graph, upstream died with 402).
+// Neo-brutal GH-dark card, yellow bars (past days 45%, today solid). Style source: profile-v2 scripts/variants.mjs.
+// Input: .github/data/contrib.json   Output: assets/activity.svg
 import { writeFileSync, readFileSync } from "fs";
 const cal = JSON.parse(readFileSync(new URL("../data/contrib.json", import.meta.url),"utf8")).data.user.contributionsCollection.contributionCalendar;
 const days = cal.weeks.flatMap(w=>w.contributionDays).slice(-31);
@@ -15,7 +15,7 @@ const skins = {
   yellow:{ card:YEL,       ink:"#111111", faint:"#6b6000", grid:"#c4a900", gridOp:1,    area:"#111111", areaOp:0.08, line:"#111111", dot:YEL, rule:"#111111", slab:"#111111", stroke:"#111111" },
   light: { card:"#FFFFFF", ink:"#111111", faint:"#777777", grid:"#E5E1D8", gridOp:1,    area:YEL, areaOp:0.14, line:"#111111", dot:YEL, rule:"#111111", slab:"#111111", stroke:"#111111" },
 };
-function chart(P, {bars=false, label="ACTIVITY", sub="/ LAST 31 DAYS"}={}){
+function chart(P, {bars=false, barStyle="solid", label="ACTIVITY", sub="/ LAST 31 DAYS"}={}){
   const W=860, OFF=P.card?6:0, padL=P.card?64:40, padR=P.card?58:24, top=P.card?96:36, bot=P.card?258:196;
   const X=i=>padL+i*((W-padL-padR-OFF)/(n-1)), Y=c=>bot-(c/max)*(bot-top);
   const co=counts.map((c,i)=>({x:X(i),y:Y(c)}));
@@ -25,8 +25,11 @@ function chart(P, {bars=false, label="ACTIVITY", sub="/ LAST 31 DAYS"}={}){
   const xl=days.map((d,i)=>(i%5===0||i===n-1)?`<text x="${X(i).toFixed(1)}" y="${bot+24}" font-size="11" font-weight="700" fill="${P.faint}" font-family="${mono}" text-anchor="middle">${d.date.slice(5)}</text>`:"").join("");
   let body;
   if(bars){
-    const bw=Math.floor((W-padL-padR-OFF)/n)-6;
-    body=co.map((c,i)=>`<rect x="${(c.x-bw/2).toFixed(1)}" y="${c.y.toFixed(1)}" width="${bw}" height="${(bot-c.y).toFixed(1)}" fill="${i===n-1?P.line:P.area}" fill-opacity="${i===n-1?1:0.85}" stroke="${P.card?P.line:"none"}" stroke-width="${P.card?1.5:0}"/>`).join("");
+    const bw=Math.floor((W-padL-padR-OFF)/n)-(barStyle==="thin"?12:6);
+    body=co.map((c,i)=>{const last=i===n-1, h=Math.max(bot-c.y, counts[i]?2:0);
+      if(barStyle==="outline") return `<rect x="${(c.x-bw/2).toFixed(1)}" y="${(bot-h).toFixed(1)}" width="${bw}" height="${h.toFixed(1)}" fill="${last?P.line:P.card}" fill-opacity="${last?1:1}" stroke="${P.line}" stroke-width="2"/>`;
+      if(barStyle==="dim") return `<rect x="${(c.x-bw/2).toFixed(1)}" y="${(bot-h).toFixed(1)}" width="${bw}" height="${h.toFixed(1)}" fill="${P.line}" fill-opacity="${last?1:0.45}" stroke="${P.line}" stroke-width="1.5"/>`;
+      return `<rect x="${(c.x-bw/2).toFixed(1)}" y="${(bot-h).toFixed(1)}" width="${bw}" height="${h.toFixed(1)}" fill="${last?P.line:P.area}" fill-opacity="${last?1:0.85}"/>`;}).join("");
   } else {
     const dots=co.map((c,i)=>{const s=i===n-1?12:8;return `<rect x="${(c.x-s/2).toFixed(1)}" y="${(c.y-s/2).toFixed(1)}" width="${s}" height="${s}" fill="${i===n-1?P.line:P.dot}" stroke="${P.line}" stroke-width="2"/>`;}).join("");
     body=`<path d="${areaD}" fill="${P.area}" fill-opacity="${P.areaOp}"/><path d="${lineD}" fill="none" stroke="${P.line}" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter"/>${dots}`;
@@ -42,5 +45,5 @@ function chart(P, {bars=false, label="ACTIVITY", sub="/ LAST 31 DAYS"}={}){
   ${body}${xl}
 </svg>`;
 }
-writeFileSync(new URL("../../assets/activity.svg", import.meta.url), chart(skins.gh)+"\n");
+writeFileSync(new URL("../../assets/activity.svg", import.meta.url), chart(skins.gh,{bars:true,barStyle:"dim"})+"\n");
 console.log(`activity.svg: ${total} contributions / 31d, max ${max}`);
