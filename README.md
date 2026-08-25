@@ -48,14 +48,10 @@
 <a href="https://github.com/arthurkatcher/holo-desktop-cli"><img src="assets/holo-cli.svg" width="47%" /></a>
 </div>
 
----
+## Activity Graph
 
 <div align="center">
-
-<a href="https://arthurkatcher.com"><img src="assets/link-web.svg" height="17" align="center" /></a> &nbsp;&nbsp; <a href="https://x.com/arthurkatcher"><img src="assets/link-x.svg" height="17" align="center" /></a> &nbsp;&nbsp; <a href="https://qoris.ai"><img src="assets/link-qoris.svg" height="17" align="center" /></a>
-
-<a href="https://github.com/arthurkatcher"><img src="assets/activity.svg?v=3" width="96%" alt="Contribution activity, last 31 days" /></a>
-
+<a href="https://github.com/arthurkatcher"><img src="assets/activity.svg?v=4" width="96%" alt="Contribution activity, last 31 days" /></a>
 </div>
 
 ## Try something
@@ -72,3 +68,11 @@
 claude plugin marketplace add qoris-ai/qoris-marketplace && claude plugin install knox@qoris
 uvx gmaps-mcp
 ```
+
+---
+
+<div align="center">
+
+<a href="https://arthurkatcher.com"><img src="assets/link-web.svg" height="17" align="center" /></a> &nbsp;&nbsp; <a href="https://x.com/arthurkatcher"><img src="assets/link-x.svg" height="17" align="center" /></a> &nbsp;&nbsp; <a href="https://qoris.ai"><img src="assets/link-qoris.svg" height="17" align="center" /></a>
+
+</div>
