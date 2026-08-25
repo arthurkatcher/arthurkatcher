@@ -30,9 +30,12 @@ jobs:
       - name: Wrap snake in terminal chrome
         run: node .github/scripts/wrap-snake.mjs
 
+      - name: Render activity line chart (self-hosted)
+        run: node .github/scripts/activity-graph.mjs
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/data/contrib.json assets/contrib.svg
-          git diff --cached --quiet || (git commit -m "chore: refresh contribution snake" && git push)
+          git add .github/data/contrib.json assets/contrib.svg assets/activity.svg
+          git diff --cached --quiet || (git commit -m "chore: refresh contribution graphs" && git push)

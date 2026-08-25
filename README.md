@@ -54,7 +54,7 @@
 
 <a href="https://arthurkatcher.com"><img src="assets/link-web.svg" height="17" align="center" /></a> &nbsp;&nbsp; <a href="https://x.com/arthurkatcher"><img src="assets/link-x.svg" height="17" align="center" /></a> &nbsp;&nbsp; <a href="https://qoris.ai"><img src="assets/link-qoris.svg" height="17" align="center" /></a>
 
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=arthurkatcher&bg_color=00000000&color=777777&line=FFD500&point=111111&area_color=FFD500&area=true&hide_border=true&custom_title=Contribution%20Activity&v=2)](https://github.com/arthurkatcher)
+<a href="https://github.com/arthurkatcher"><img src="assets/activity.svg?v=1" width="96%" alt="Contribution activity, last 31 days" /></a>
 
 </div>
 
