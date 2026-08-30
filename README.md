@@ -11,7 +11,7 @@
 </div>
 
 <div align="center">
-<a href="https://github.com/arthurkatcher"><img src="assets/contrib.svg?v=3" width="96%" alt="3,234 contributions in the last year" /></a>
+<a href="https://github.com/arthurkatcher"><img src="assets/contrib.svg?v=3" width="96%" alt="3,236 contributions in the last year" /></a>
 </div>
 
 ## Building
