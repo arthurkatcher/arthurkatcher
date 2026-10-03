@@ -1,7 +1,7 @@
 ## About me
 
 <div align="center">
-<a href="https://arthurkatcher.com"><img src="assets/hero-contrib.svg" width="96%" alt="Co-Founder & CTO · Qoris — founder of an acquired AI startup, now building the infrastructure platform for AI agents. 3,638 contributions in the last year" /></a>
+<a href="https://arthurkatcher.com"><img src="assets/hero-contrib.svg" width="96%" alt="Co-Founder & CTO · Qoris. Founder of an acquired AI startup, now building the infrastructure platform for AI agents. 3,638 contributions in the last year" /></a>
 </div>
 
 ## Building
@@ -36,6 +36,10 @@
 <a href="https://github.com/arthurkatcher/agent-clock"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/agent-clock-dark.svg"><img src="assets/agent-clock-light.svg" width="47%" /></picture></a>
 <a href="https://github.com/arthurkatcher/xai-voice-agent"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/voice-dark.svg"><img src="assets/voice-light.svg" width="47%" /></picture></a>
 <a href="https://github.com/arthurkatcher/holo-desktop-cli"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/holo-cli-dark.svg"><img src="assets/holo-cli-light.svg" width="47%" /></picture></a>
+<a href="https://github.com/arthurkatcher/explainer-video"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/explainer-dark.svg"><img src="assets/explainer-light.svg" width="47%" /></picture></a>
+<a href="https://github.com/arthurkatcher/jev-realm-of-iron"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/jev-dark.svg"><img src="assets/jev-light.svg" width="47%" /></picture></a>
+<br/>
+<sub>Merged PRs into OpenClaw's plugin registry (9K stars) and H Company's computer-use CLI; found a scraping bug in Firecrawl's Python SDK (158K stars) and proposed a fix, which got accepted.</sub>
 </div>
 
 ## Activity Graph
@@ -47,9 +51,9 @@
 ## Try something
 
 <div align="center">
-<a href="https://github.com/qoris-ai/knox"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-knox-dark.svg"><img src="assets/card-knox-light.svg" width="46%" alt="knox — claude plugin install knox@qoris" /></picture></a>
+<a href="https://github.com/qoris-ai/knox"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-knox-dark.svg"><img src="assets/card-knox-light.svg" width="46%" alt="knox: claude plugin install knox@qoris" /></picture></a>
 &nbsp;&nbsp;
-<a href="https://github.com/arthurkatcher/google-maps-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-gmaps-dark.svg"><img src="assets/card-gmaps-light.svg" width="46%" alt="gmaps-mcp — uvx gmaps-mcp" /></picture></a>
+<a href="https://github.com/arthurkatcher/google-maps-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-gmaps-dark.svg"><img src="assets/card-gmaps-light.svg" width="46%" alt="gmaps-mcp: uvx gmaps-mcp" /></picture></a>
 <br/>
 <sub>Copy a command. Knox guards every agent session; gmaps-mcp runs anywhere MCP does.</sub>
 </div>
