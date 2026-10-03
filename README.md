@@ -1,12 +1,4 @@
 <div align="center">
-
-<a href="https://github.com/arthurkatcher"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg"><img src="assets/banner-light.svg" width="96%" alt="co-founder and cto @ qoris · harnesses and runtimes for ai agents · python / ts / mcp" /></picture></a>
-
-</div>
-
-# Hey, I'm Arthur 👋
-
-<div align="center">
 <a href="https://arthurkatcher.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg"><img src="assets/hero-light.svg" width="96%" alt="Co-Founder & CTO · Qoris — founder of an acquired AI startup, now building the infrastructure platform for AI agents" /></picture></a>
 </div>
 
