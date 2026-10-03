@@ -1,1 +1,1 @@
-Geist Mono by Vercel, SIL Open Font License 1.1 (https://github.com/vercel/geist-font). Embedded (subset) into the daily chart SVGs by `.github/scripts/hairline_live.py`.
+Geist Mono by Vercel, SIL Open Font License 1.1 (https://github.com/vercel/geist-font). Embedded (subset) into the daily chart SVGs by `.github/scripts/profile_live.py` (activity chart; the intro+snake block uses the pre-rendered template in `.github/data/`).
