@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate snake (Platane/snk, neo-brutal palette)
+      - name: Generate snake (Platane/snk; colours are re-themed by hairline_live.py)
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: arthurkatcher
@@ -27,11 +27,14 @@ jobs:
         run: |
           gh api graphql -f query='{ user(login: "arthurkatcher") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount contributionLevel } } } } } }' > .github/data/contrib.json
 
-      - name: Wrap snake in terminal chrome
-        run: node .github/scripts/wrap-snake.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-      - name: Render activity line chart (self-hosted)
-        run: node .github/scripts/activity-graph.mjs
+      - name: Render Hairline charts (contrib snake + activity, light and dark)
+        run: |
+          pip install --quiet fonttools brotli
+          python .github/scripts/hairline_live.py
 
       - name: Sync README contribution count
         run: |
@@ -42,5 +45,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/data/contrib.json assets/contrib.svg assets/activity.svg README.md
+          git add .github/data/contrib.json assets/contrib-light.svg assets/contrib-dark.svg assets/activity-light.svg assets/activity-dark.svg README.md
           git diff --cached --quiet || (git commit -m "chore: refresh contribution graphs" && git push)

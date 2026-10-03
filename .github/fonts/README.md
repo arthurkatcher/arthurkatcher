@@ -1,0 +1,1 @@
+Geist Mono by Vercel, SIL Open Font License 1.1 (https://github.com/vercel/geist-font). Embedded (subset) into the daily chart SVGs by `.github/scripts/hairline_live.py`.
