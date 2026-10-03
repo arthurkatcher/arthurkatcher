@@ -1,3 +1,5 @@
+## About me
+
 <div align="center">
 <a href="https://arthurkatcher.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg"><img src="assets/hero-light.svg" width="96%" alt="Co-Founder & CTO · Qoris — founder of an acquired AI startup, now building the infrastructure platform for AI agents" /></picture></a>
 </div>
