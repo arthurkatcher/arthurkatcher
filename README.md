@@ -1,7 +1,7 @@
 ## About me
 
 <div align="center">
-<a href="https://arthurkatcher.com"><img src="assets/hero-contrib.svg" width="96%" alt="Co-Founder & CTO · Qoris. Founder of an acquired AI startup, now building the infrastructure platform for AI agents. 3,726 contributions in the last year" /></a>
+<a href="https://arthurkatcher.com"><img src="assets/hero-contrib.svg" width="96%" alt="Co-Founder & CTO · Qoris. Founder of an acquired AI startup, now building the infrastructure platform for AI agents. 3,728 contributions in the last year" /></a>
 </div>
 
 ## Building
