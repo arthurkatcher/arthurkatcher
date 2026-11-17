@@ -3,10 +3,10 @@
 
 Input:  dist/github-snake.svg   (Platane/snk svg-only output)
         .github/data/contrib.json
-Output: assets/hero-contrib.svg  (intro + contributions snake, one panel)
+Output: assets/hero-light.svg, assets/hero-dark.svg  (intro + contributions snake, per GitHub theme)
         assets/activity.svg      (last 31 days)
-The intro is a locked template (.github/data/hero-contrib.tpl.svg, built by
-brand/github-profile-2026-10-03/build_template.py); only the snake and the total are filled in.
+The intro is a locked template per theme (.github/data/hero-<theme>.tpl.svg, built by
+brand/github-profile-2026-10-03/build_template_5c.py); only the snake and the total are filled in.
 Geist Mono is subset and embedded in activity.svg, so GitHub renders the real font.
 Needs: pip install fonttools brotli
 """
@@ -18,8 +18,12 @@ from fontTools.varLib import instancer
 
 ROOT = Path(__file__).resolve().parents[2]
 FONTS = {"mono": ROOT / ".github/fonts/GeistMono-Latin.woff2"}
-TPL = ROOT / ".github/data/hero-contrib.tpl.svg"
-CURSOR_BASE, MONO_ADV = 44, 7.8  # from build_template.py (Geist Mono 13px)
+TPL = ".github/data/hero-{}.tpl.svg"
+CURSOR_BASE, MONO_ADV = 4, 7.8  # from build_template_5c.py (Geist Mono 13px)
+# The snake's cells and head per theme: greys, and the theme's ink for the head.
+LEVELS = {"light": ["#f0f0f0", "#d4d4d4", "#a3a3a3", "#525252", "#0a0a0a"],
+          "dark": ["#1f1f22", "#3f3f46", "#71717a", "#a1a1aa", "#fafafa"]}
+HEAD = {"light": "#0a0a0a", "dark": "#fafafa"}
 FAMILY = {"mono": "GeistMonoX, 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"}
 W = 860
 
@@ -76,11 +80,11 @@ def glass(s, x, y, label, sub=None):
     s.add(f'<rect x="{x}" y="{y-15}" width="{w:.1f}" height="22" rx="11" fill="#fff" fill-opacity="0.08" stroke="#fff" stroke-opacity="0.18"/>')
     s.text(x + 10, y, full, 11, "#ffffff", "mono", 500, ls=0.08)
 
-def hero_contrib(vb, inner, total):
-    lv = ["#1f1f22", "#3f3f46", "#71717a", "#a1a1aa", "#fafafa"]
-    inner = re.sub(r":root\{[^}]*\}", f":root{{--cb:transparent;--cs:#ffffff;--ce:{lv[0]};--c0:{lv[0]};--c1:{lv[1]};--c2:{lv[2]};--c3:{lv[3]};--c4:{lv[4]}}}", inner, count=1)
+def hero(vb, inner, total, theme):
+    lv = LEVELS[theme]
+    inner = re.sub(r":root\{[^}]*\}", f":root{{--cb:transparent;--cs:{HEAD[theme]};--ce:{lv[0]};--c0:{lv[0]};--c1:{lv[1]};--c2:{lv[2]};--c3:{lv[3]};--c4:{lv[4]}}}", inner, count=1)
     cx = CURSOR_BASE + len(f"$ {total} contributions in the last year ") * MONO_ADV
-    return (TPL.read_text().replace("@@VB@@", vb).replace("@@TOTAL@@", total)
+    return ((ROOT / TPL.format(theme)).read_text().replace("@@VB@@", vb).replace("@@TOTAL@@", total)
             .replace("@@CX@@", f"{cx:.1f}").replace("@@INNER@@", inner))
 
 def activity(days):
@@ -109,7 +113,7 @@ def main():
     cal = json.loads((ROOT / ".github/data/contrib.json").read_text())["data"]["user"]["contributionsCollection"]["contributionCalendar"]
     total = f'{cal["totalContributions"]:,}'
     days = [d for w in cal["weeks"] for d in w["contributionDays"]][-31:]
-    (ROOT / "assets/hero-contrib.svg").write_text(hero_contrib(vb, inner, total))
+    for theme in ("light", "dark"): (ROOT / f"assets/hero-{theme}.svg").write_text(hero(vb, inner, total, theme))
     (ROOT / "assets/activity.svg").write_text(activity(days).render())
     print(f"spotlight blocks: {total} contributions/yr, {sum(d['contributionCount'] for d in days)} in 31d")
 
