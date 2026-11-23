@@ -1,7 +1,7 @@
 ## About me
 
 <div align="center">
-<a href="https://trykubi.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg"><img src="assets/hero-light.svg" width="96%" alt="Hey, I'm Arthur. Third-time founder, building Kubi, computers in the cloud for AI agents. Before: co-founder and CTO of Qoris, founder of SalesGet (acquired). 4,905 contributions in the last year" /></picture></a>
+<a href="https://trykubi.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg"><img src="assets/hero-light.svg" width="96%" alt="Hey, I'm Arthur. Third-time founder, building Kubi, computers in the cloud for AI agents. Before: co-founder and CTO of Qoris, founder of SalesGet (acquired). 4,947 contributions in the last year" /></picture></a>
 </div>
 
 ## Companies
